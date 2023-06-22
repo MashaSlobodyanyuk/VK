@@ -2,6 +2,11 @@ object WallService {
     private var posts = emptyArray<Post>()
     private var id = 0
 
+    fun clear() {
+        posts = emptyArray()
+        // также здесь нужно сбросить счетчик для id постов, если он у вас используется
+    }
+
     fun add(post: Post): Post {
         if(post.id == 0) {
             posts += post.copy(id++)

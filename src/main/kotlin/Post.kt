@@ -9,5 +9,8 @@ data class Post(
     var views: Int,
     var geo: String,
     val canPin: Boolean,
+    val ownerId: Int,
+    val fromId: Int,
+    val createdBy: Int,
     val likes: Likes
 )
