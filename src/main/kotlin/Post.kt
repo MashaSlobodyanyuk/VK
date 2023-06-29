@@ -21,7 +21,8 @@ data class Post(
     var MarkedAsAds: Boolean,
     var isFavorite: Boolean,
     var postponedId: Int,
-    val likes: Likes
+    val likes: Likes,
+    var attachment: Array<Attachment>
 ){
 
 
