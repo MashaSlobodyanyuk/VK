@@ -42,4 +42,19 @@ class WallServiceTest {
         val result = WallService.update(getPost.copy(text="Vasia"))
         assertEquals(result, true)
     }
+
+    @Test(expected = PostNotFoundException::class)
+    fun shouldThrow() {
+   WallService.createComment(-100,Comment(1,1,1,"Bla bla",Donut(),1,1,VideoAttachment(), arrayOf(1)))
+
+    }
+
+    @Test
+    fun createCommente() {
+        val post1 = Post(2,  1, 1, 1, 17,"Petya",null, null, true, "Sasha", null, true,true,true,true,true,true,1,  likes = Likes(), arrayOf(VideoAttachment(),AudioAttachment()))
+        WallService.add(post1)
+        WallService.createComment(2,Comment(1,1,1,"Bla bla",Donut(),1,1,VideoAttachment(), arrayOf(1)))
+
+    }
+
 }
