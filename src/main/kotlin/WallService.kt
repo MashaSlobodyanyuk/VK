@@ -1,6 +1,19 @@
 object WallService {
     private var posts = emptyArray<Post>()
+    private var comments = emptyArray<Comment>()
     private var id = 0
+
+    fun createComment(postId: Int, comment: Comment): Comment {
+        println(posts)
+        for (i in posts.indices) {
+            if (posts[i].id == postId) {
+                comments += comment
+                return comment
+            }
+        }
+        throw PostNotFoundException("Такого поста нет")
+    }
+
 
     fun clear() {
         posts = emptyArray()
@@ -37,4 +50,5 @@ object WallService {
         }
         return -1
     }
+
 }

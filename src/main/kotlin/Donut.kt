@@ -1,3 +1,10 @@
-data class Donut(var isDonut: Boolean, var paidDuration: Int, var placeHolder: Placeholder, var canPublishFreeCopy: Boolean, var EditMode: String)
+data class Donut( var placeHolder: Placeholder = Placeholder) {
+    var isDonut: Boolean = true
+    var paidDuration: Int = 1
+    var isDon: Boolean = true
+    var canPublishFreeCopy: Boolean = true
+    var EditMode: String = "Vasya"
+
+}
 
 
